@@ -4,13 +4,13 @@ import { X } from 'lucide-react'
 
 export default function Gallery() {
   const photos = [
-    { src: `${import.meta.env.BASE_URL}photos/__.jpg.webp`, span: 'md:col-span-2 md:row-span-1 h-64 sm:h-80' },
-    { src: `${import.meta.env.BASE_URL}photos/__2.jpg.webp`, span: 'md:col-span-1 md:row-span-1 h-64 sm:h-80' },
-    { src: `${import.meta.env.BASE_URL}photos/__3.jpg.webp`, span: 'md:col-span-1 md:row-span-2 h-64 md:h-[536px]' },
-    { src: `${import.meta.env.BASE_URL}photos/_.jpg (2).webp`, span: 'md:col-span-1 md:row-span-1 h-64 sm:h-60' },
-    { src: `${import.meta.env.BASE_URL}photos/_.jpg (1).webp`, span: 'md:col-span-1 md:row-span-1 h-64 sm:h-60' },
-    { src: `${import.meta.env.BASE_URL}photos/_.jpg.webp`, span: 'md:col-span-1 md:row-span-1 h-64 sm:h-60' },
-    { src: `${import.meta.env.BASE_URL}photos/_3_.jpg.webp`, span: 'md:col-span-1 md:row-span-1 h-64 sm:h-60' },
+    { src: `${import.meta.env.BASE_URL}photos/photo_1.webp`, span: 'md:col-span-2 md:row-span-1 h-64 sm:h-80' },
+    { src: `${import.meta.env.BASE_URL}photos/photo_2.webp`, span: 'md:col-span-1 md:row-span-1 h-64 sm:h-80' },
+    { src: `${import.meta.env.BASE_URL}photos/photo_3.webp`, span: 'md:col-span-1 md:row-span-2 h-64 md:h-[536px]' },
+    { src: `${import.meta.env.BASE_URL}photos/photo_4.webp`, span: 'md:col-span-1 md:row-span-1 h-64 sm:h-60' },
+    { src: `${import.meta.env.BASE_URL}photos/photo_5.webp`, span: 'md:col-span-1 md:row-span-1 h-64 sm:h-60' },
+    { src: `${import.meta.env.BASE_URL}photos/photo_6.webp`, span: 'md:col-span-1 md:row-span-1 h-64 sm:h-60' },
+    { src: `${import.meta.env.BASE_URL}photos/photo_7.webp`, span: 'md:col-span-1 md:row-span-1 h-64 sm:h-60' },
   ]
 
   const [selectedPhoto, setSelectedPhoto] = useState(null)
