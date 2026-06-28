@@ -101,7 +101,7 @@ export default function Modal({ isOpen, onClose, defaultProgram = '' }) {
               <form onSubmit={handleSubmit(onSubmit)} className="space-y-5 relative z-10">
                 <div className="flex flex-col items-center text-center mb-2">
                   <motion.img 
-                    src="/logo.png" 
+                    src={`${import.meta.env.BASE_URL}logo.png`} 
                     alt="Маскот лиса" 
                     animate={isTyping ? {
                       scale: [1, 1.08, 1],
@@ -199,7 +199,7 @@ export default function Modal({ isOpen, onClose, defaultProgram = '' }) {
               >
                 {/* Celebrating Mascot */}
                 <motion.img 
-                  src="/logo.png" 
+                  src={`${import.meta.env.BASE_URL}logo.png`} 
                   alt="Лиса празднует" 
                   animate={{
                     y: [0, -25, 0],

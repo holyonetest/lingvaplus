@@ -93,7 +93,7 @@ export default function WhyUs({ onOpenModal }) {
           </div>
           <div className="relative rounded-[2rem] overflow-hidden shadow-2xl shadow-brand-dark/10 border-[6px] border-white bg-brand-dark aspect-video group">
             <video 
-              src="/720p_ЛИНГВА_это.mp4"
+              src={`${import.meta.env.BASE_URL}720p_ЛИНГВА_это.mp4`}
               controls
               preload="metadata"
               className="w-full h-full object-cover"

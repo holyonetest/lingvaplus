@@ -190,7 +190,7 @@ export default function OrgInfoDrawer({ isOpen, onClose }) {
               <div className="flex flex-col sm:flex-row items-center sm:items-start space-y-4 sm:space-y-0 sm:space-x-6 p-6 bg-brand-lightGray border border-gray-100 rounded-3xl">
                 <div className="w-24 h-24 sm:w-32 sm:h-32 rounded-2xl overflow-hidden border-2 border-white shadow-soft flex-shrink-0 bg-white">
                   <img 
-                    src="/photos/руководство.jpg" 
+                    src={`${import.meta.env.BASE_URL}photos/руководство.jpg`} 
                     alt="Жданова Лютия Рафаиловна" 
                     className="w-full h-full object-cover object-top"
                     onError={(e) => {

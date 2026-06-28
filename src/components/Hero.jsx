@@ -103,7 +103,7 @@ export default function Hero({ onOpenModal }) {
             >
               {/* Replace img with a video tag when you have the transparent 3D WebM */}
               <img 
-                src="/logo.png" 
+                src={`${import.meta.env.BASE_URL}logo.png`} 
                 alt="3D Маскот Лингва+" 
                 className="w-4/5 h-4/5 object-contain drop-shadow-[0_30px_50px_rgba(241,109,34,0.25)]"
               />

@@ -38,7 +38,7 @@ export default function Header({ onOpenModal, onOpenOrgInfo }) {
         {/* Logo */}
         <a href="#hero" className="flex items-center space-x-3 group">
           <img 
-            src="/logo.png" 
+            src={`${import.meta.env.BASE_URL}logo.png`} 
             alt="Лингва+" 
             className="w-10 h-10 object-contain group-hover:rotate-12 transition-transform duration-300"
           />
