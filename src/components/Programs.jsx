@@ -105,8 +105,7 @@ export default function Programs({ onOpenModal }) {
                             <div className="flex items-center w-full space-x-3">
                               <Button 
                                 onClick={() => onOpenModal(prog.id)}
-                                variant="outline"
-                                className="flex-grow py-6 h-[52px] bg-brand-orangeLight/30 border-2 border-brand-orangeLight text-brand-orange hover:bg-brand-orangeLight hover:text-brand-orange text-sm font-bold rounded-2xl transition-all duration-300 active:scale-[0.98]"
+                                className="flex-grow py-6 h-[52px] bg-brand-orange text-white hover:bg-brand-orange/90 hover:shadow-md hover:-translate-y-0.5 text-sm font-bold rounded-2xl transition-all duration-300 active:scale-[0.98]"
                               >
                                 Узнать расписание
                               </Button>

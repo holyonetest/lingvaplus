@@ -1,6 +1,8 @@
 import React, { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { X, FileText, Landmark, GraduationCap, Users, BookOpen, CircleDollarSign, CheckSquare, Award } from 'lucide-react'
+import { X, ChevronDown, FileText, Landmark, GraduationCap, Users, BookOpen, CircleDollarSign, CheckSquare, Award } from 'lucide-react'
+import { ScrollArea } from "@/components/ui/scroll-area"
+import { CONTACT_INFO } from "../config/constants"
 
 export default function OrgInfoDrawer({ isOpen, onClose }) {
   const [activeTab, setActiveTab] = useState('basic')
@@ -52,7 +54,7 @@ export default function OrgInfoDrawer({ isOpen, onClose }) {
               </div>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-2 border-b border-gray-50 pb-2">
                 <span className="font-extrabold text-brand-dark">Контактный телефон:</span>
-                <span className="md:col-span-2"><a href="tel:+79176308343" className="text-brand-orange font-bold hover:underline">8 (917) 630-83-43</a></span>
+                <span className="md:col-span-2"><a href={CONTACT_INFO.phone.href} className="text-brand-orange font-bold hover:underline">{CONTACT_INFO.phone.display}</a></span>
               </div>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-2 border-b border-gray-50 pb-2">
                 <span className="font-extrabold text-brand-dark">Режим и график работы:</span>
@@ -60,7 +62,7 @@ export default function OrgInfoDrawer({ isOpen, onClose }) {
               </div>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-2 border-b border-gray-50 pb-2">
                 <span className="font-extrabold text-brand-dark">Электронная почта:</span>
-                <span className="md:col-span-2"><a href="mailto:lingvapluss@gmail.com" className="text-brand-orange hover:underline">lingvapluss@gmail.com</a></span>
+                <span className="md:col-span-2"><a href={`mailto:${CONTACT_INFO.email}`} className="text-brand-orange hover:underline">{CONTACT_INFO.email}</a></span>
               </div>
             </div>
           </div>
@@ -318,7 +320,7 @@ export default function OrgInfoDrawer({ isOpen, onClose }) {
               <ul className="list-disc list-inside space-y-2 pl-2">
                 <li>Вакантные места для приема за счет бюджетных ассигнований местных, региональных или федерального бюджетов — <span className="font-extrabold text-brand-dark">отсутствуют</span>.</li>
                 <li>Прием и зачисление в группы дополнительного образования за счет средств физических лиц ведется в течение всего учебного года при наличии свободных мест.</li>
-                <li>Информацию о наличии мест в группах вашего уровня уточняйте по единому телефону: <a href="tel:+79176308343" className="text-brand-orange font-bold hover:underline">8 (917) 630-83-43</a>.</li>
+                <li>Информацию о наличии мест в группах вашего уровня уточняйте по единому телефону: <a href={CONTACT_INFO.phone.href} className="text-brand-orange font-bold hover:underline">{CONTACT_INFO.phone.display}</a>.</li>
               </ul>
             </div>
           </div>

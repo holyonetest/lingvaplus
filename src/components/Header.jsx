@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Menu, X } from 'lucide-react'
+import { CONTACT_INFO } from '../config/constants'
 
 export default function Header({ onOpenModal, onOpenOrgInfo }) {
   const [isOpen, setIsOpen] = useState(false)
@@ -103,10 +104,10 @@ export default function Header({ onOpenModal, onOpenOrgInfo }) {
         {/* Desktop Call to Action */}
         <div className="hidden md:flex items-center space-x-4">
           <a 
-            href="tel:+79176308343" 
+            href={CONTACT_INFO.phone.href} 
             className="text-sm font-semibold text-brand-dark hover:text-brand-orange transition-colors"
           >
-            8 917 630-83-43
+            {CONTACT_INFO.phone.display}
           </a>
           <button 
             onClick={() => onOpenModal()}
@@ -168,10 +169,10 @@ export default function Header({ onOpenModal, onOpenOrgInfo }) {
               })}
               <div className="pt-4 flex flex-col space-y-3">
                 <a 
-                  href="tel:+79176308343" 
+                  href={CONTACT_INFO.phone.href} 
                   className="text-center text-brand-dark font-bold py-2 hover:text-brand-orange transition-colors"
                 >
-                  8 917 630-83-43
+                  {CONTACT_INFO.phone.display}
                 </a>
                 <button 
                   onClick={() => {

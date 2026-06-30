@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { Phone, MapPin, Star, Instagram } from 'lucide-react'
+import { CONTACT_INFO } from '../config/constants'
 export default function Footer({ onOpenOrgInfo }) {
   const branches = [
     {
@@ -117,8 +118,8 @@ export default function Footer({ onOpenOrgInfo }) {
                   <Phone className="text-brand-orange mt-1 flex-shrink-0" size={20} />
                   <div>
                     <p className="font-bold text-base">Единый телефон</p>
-                    <a href="tel:+79176308343" className="text-xl font-extrabold text-brand-orange hover:text-brand-orangeHover transition-colors mt-0.5 block">
-                      8 (917) 630-83-43
+                    <a href={CONTACT_INFO.phone.href} className="text-xl font-extrabold text-brand-orange hover:text-brand-orangeHover transition-colors mt-0.5 block">
+                      {CONTACT_INFO.phone.display}
                     </a>
                   </div>
                 </div>
@@ -130,7 +131,7 @@ export default function Footer({ onOpenOrgInfo }) {
               <p className="text-xs font-bold text-brand-gray uppercase tracking-wider">Мы в соцсетях</p>
               <div className="flex flex-wrap gap-3">
                 <a 
-                  href="https://vk.com/lingvapluss" 
+                  href={CONTACT_INFO.vkGroup} 
                   target="_blank" 
                   rel="noopener noreferrer" 
                   className="inline-flex items-center space-x-2 bg-brand-orange text-white px-5 py-3 rounded-2xl hover:bg-brand-orangeHover shadow-md shadow-brand-orange/10 hover:shadow-lg hover:shadow-brand-orange/20 transition-all font-bold text-sm"
