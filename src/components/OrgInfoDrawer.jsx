@@ -1,7 +1,6 @@
 import React, { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { X, ChevronDown, FileText, Landmark, GraduationCap, Users, BookOpen, CircleDollarSign, CheckSquare, Award } from 'lucide-react'
-import { ScrollArea } from "@/components/ui/scroll-area"
 import { CONTACT_INFO } from "../config/constants"
 
 export default function OrgInfoDrawer({ isOpen, onClose }) {
