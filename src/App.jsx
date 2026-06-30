@@ -27,7 +27,7 @@ export default function App() {
   }
 
   return (
-    <div className="min-h-screen relative overflow-hidden">
+    <div className="min-h-screen relative overflow-clip">
       {/* Global Background Blobs */}
       <div className="bg-blobs fixed inset-0 pointer-events-none z-[-1]">
         <div className="absolute top-[10%] left-[-10%] w-[600px] h-[600px] rounded-full bg-brand-orangeLight/80 blur-[120px] animate-blob" />

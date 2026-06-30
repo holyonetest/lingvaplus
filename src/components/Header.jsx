@@ -1,9 +1,31 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Menu, X } from 'lucide-react'
 
 export default function Header({ onOpenModal, onOpenOrgInfo }) {
   const [isOpen, setIsOpen] = useState(false)
+  const [activeSection, setActiveSection] = useState('')
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setActiveSection(`#${entry.target.id}`)
+          }
+        })
+      },
+      { rootMargin: '-40% 0px -40% 0px' }
+    )
+
+    const sectionIds = ['why-us', 'programs', 'quiz', 'reviews', 'faq', 'contacts']
+    sectionIds.forEach((id) => {
+      const el = document.getElementById(id)
+      if (el) observer.observe(el)
+    })
+
+    return () => observer.disconnect()
+  }, [])
 
   const menuItems = [
     { label: 'О школе', href: '#why-us' },
@@ -33,7 +55,7 @@ export default function Header({ onOpenModal, onOpenOrgInfo }) {
   }
 
   return (
-    <header className="sticky top-0 z-40 glass-header">
+    <header className="sticky top-0 z-50 bg-white/80 backdrop-blur-md shadow-sm glass-header">
       <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
         {/* Logo */}
         <a href="#hero" className="flex items-center space-x-3 group">
@@ -66,7 +88,11 @@ export default function Header({ onOpenModal, onOpenOrgInfo }) {
                 key={item.label}
                 href={item.href}
                 onClick={(e) => handleScroll(e, item.href)}
-                className="text-sm font-medium text-brand-gray hover:text-brand-orange transition-colors relative py-2 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-brand-orange hover:after:w-full after:transition-all after:duration-300"
+                className={`text-sm font-medium transition-colors relative py-2 after:content-[''] after:absolute after:bottom-0 after:left-0 after:h-0.5 after:transition-all after:duration-300 ${
+                  activeSection === item.href
+                    ? 'text-brand-orange after:w-full after:bg-brand-orange'
+                    : 'text-brand-gray hover:text-brand-orange after:w-0 after:bg-brand-orange hover:after:w-full'
+                }`}
               >
                 {item.label}
               </a>
@@ -130,7 +156,11 @@ export default function Header({ onOpenModal, onOpenOrgInfo }) {
                     key={item.label}
                     href={item.href}
                     onClick={(e) => handleScroll(e, item.href)}
-                    className="text-base font-medium text-brand-gray hover:text-brand-orange py-2 transition-colors border-b border-gray-50"
+                    className={`text-base font-medium py-2 transition-colors border-b border-gray-50 ${
+                      activeSection === item.href
+                        ? 'text-brand-orange'
+                        : 'text-brand-gray hover:text-brand-orange'
+                    }`}
                   >
                     {item.label}
                   </a>

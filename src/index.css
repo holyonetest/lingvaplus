@@ -31,7 +31,7 @@
   }
 
   body {
-    @apply bg-brand-lightGray text-brand-dark antialiased overflow-x-hidden;
+    @apply bg-brand-lightGray text-brand-dark antialiased overflow-x-clip;
     /* Create a fixed global animated gradient mesh background */
     background: 
       radial-gradient(at 0% 0%, hsla(28,100%,74%,1) 0, transparent 50%), 

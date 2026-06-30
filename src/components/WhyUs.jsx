@@ -1,10 +1,24 @@
-import React from 'react'
+import React, { useState, useRef } from 'react'
 import { motion } from 'framer-motion'
 import { Heart, MessageSquare, TrendingUp, Users, Sun, BookOpen, Play } from 'lucide-react'
 import { Card, CardContent } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 
 export default function WhyUs({ onOpenModal }) {
+  const [isPlaying, setIsPlaying] = useState(false)
+  const videoRef = useRef(null)
+
+  const togglePlay = () => {
+    if (videoRef.current) {
+      if (isPlaying) {
+        videoRef.current.pause()
+      } else {
+        videoRef.current.play()
+      }
+      setIsPlaying(!isPlaying)
+    }
+  }
+
   const advantages = [
     {
       title: 'Школа, куда дети ходят вприпрыжку',
@@ -91,13 +105,22 @@ export default function WhyUs({ onOpenModal }) {
             <h3 className="text-2xl font-extrabold text-brand-dark">Видеопрезентация школы Лингва+ 🎥</h3>
             <p className="text-sm text-brand-gray font-medium mt-2">Посмотрите небольшой видеоролик о том, как у нас проходят занятия и развиваются дети.</p>
           </div>
-          <div className="relative rounded-[2rem] overflow-hidden shadow-2xl shadow-brand-dark/10 border-[6px] border-white bg-brand-dark aspect-video group">
+          <div className="relative rounded-[2rem] overflow-hidden shadow-2xl shadow-brand-dark/10 border-[6px] border-white bg-brand-dark aspect-video group cursor-pointer" onClick={togglePlay}>
             <video 
+              ref={videoRef}
               src={`${import.meta.env.BASE_URL}720p_ЛИНГВА_это.mp4`}
-              controls
               preload="metadata"
               className="w-full h-full object-cover"
+              onPlay={() => setIsPlaying(true)}
+              onPause={() => setIsPlaying(false)}
             />
+            {!isPlaying && (
+              <div className="absolute inset-0 bg-black/40 flex items-center justify-center transition-all duration-300">
+                <div className="w-20 h-20 bg-brand-orange/90 text-white rounded-full flex items-center justify-center shadow-xl shadow-brand-orange/20 transform group-hover:scale-110 transition-transform duration-300 backdrop-blur-sm">
+                  <Play size={40} className="ml-1.5 fill-white" />
+                </div>
+              </div>
+            )}
           </div>
         </motion.div>
 
